@@ -1,0 +1,29 @@
+{
+  "name": "modul-9",
+  "version": "1.0.0",
+  "description": "- Асинхронность в JavaScript\r   - Однопоточность и многопоточность\r   - Отоложенные вызовы (планирование)\r   - Web workers для «многопоточности»\r   - Service workers для «перехвата» запросов от документа (кеширование)\r   - [Статья](https://bitsofco.de/web-workers-vs-service-workers-vs-worklets)\r - Планирование: window.setTimeout() и window.setInterval()\r - Цикл событий (event loop)\r   - [Площадка](http://latentflip.com/loupe)\r   - setTimeout(N) и setTimeout(0)\r - Мастерская: оповещение\r - Мастерская: «надоедалка» подписки\r   - Bootstrap для CSS\r   - Bootstrap Native для JS\r - Встроенный объект Date\r   - Создание\r   - Разница времени\r   - Date.now() и new Date().getTime()\r   - [Библиотека date-fns](https://date-fns.org/)\r - Мастерская: таймер",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/*.html",
+    "build": "parcel build src/*.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NataliiaHrynchuk/modul-9.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NataliiaHrynchuk/modul-9/issues"
+  },
+  "homepage": "https://github.com/NataliiaHrynchuk/modul-9#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-nuke-dist": "^1.0.1"
+  },
+  "dependencies": {
+    "bootstrap.native": "^3.0.13",
+    "lodash.throttle": "^4.1.1"
+  }
+}
