@@ -22,7 +22,7 @@ const refs = {
       // const deltaTime = currentTime - startTime;
       // const timeComponents = getTimeComponents(deltaTime);
       // console.log(timeComponents);
-      // const { hours, mins, secs } = getTimeComponents(deltaTime);//--деструктуризуємо об'єкт з рядка 76
+      // const { hours, mins, secs } = getTimeComponents(deltaTime);//--деструктуризуємо об'єкт 
       // console.log(`${hours}:${mins}:${secs}`);
 
       //--Коли використовуємо ф-цію updateClockface, то деструктуризація вже не потрібна,
@@ -38,16 +38,21 @@ const refs = {
 // };
 
 // timer.start(); //-- Запускається при оновленні сторінки
-//---А так запускається кнопкою старт:--- 
+/*
+* --- А так запускається кнопкою старт:
+*/ 
 
-refs.startBtn.addEventListener('click', () => {
-  timer.start();
-});
+// refs.startBtn.addEventListener('click', () => {
+//   timer.start();
+// });
 
-//--Зупиняється кнопкою стоп:-------
-refs.stopBtn.addEventListener('click', () => {
-  timer.stop();
-})
+/*
+* -----Зупиняється кнопкою стоп:
+*/
+
+// refs.stopBtn.addEventListener('click', () => {
+//   timer.stop();
+// })
 
 /*
 //    * - Принимает время в миллисекундах
@@ -82,6 +87,7 @@ function updateClockface({ hours, mins, secs }) {
 }
 
 /**
+ * ========================================================================
  * ====Тепер зробимо все через клас====
  */
 
@@ -90,15 +96,13 @@ class Timer {
     this.intervalId = null;
     this.isActive = false;
     this.onTick = onTick;
-    
-
-    // this.init();
+    this.init();
   }
 
-  // init() {
-  //   const time = this.getTimeComponents(0);
-  //   this.onTick(time);
-  // }
+  init() {
+    const time = this.getTimeComponents(0);
+    this.onTick(time);
+  } //--ініціалізація інтерфейсу таймера, щоб відображався при завантаженні сторінки
 
   start() {
     if (this.isActive) {
@@ -142,5 +146,5 @@ const timer = new Timer({
   onTick: updateClockface,
 });
 
-// refs.startBtn.addEventListener('click', timer.start.bind(timer));
-// refs.stopBtn.addEventListener('click', timer.stop.bind(timer));
+refs.startBtn.addEventListener('click', timer.start.bind(timer));
+refs.stopBtn.addEventListener('click', timer.stop.bind(timer));
