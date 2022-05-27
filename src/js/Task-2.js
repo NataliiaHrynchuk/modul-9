@@ -17,10 +17,10 @@ console.log(refs.dataDays);
 console.log(refs.dataHours);
 console.log(refs.dataMinutes);
 console.log(refs.dataSeconds);
-const selectedDate = null;
+let selectedDate = null;
 
-refs.input.addEventListener('click', () => {
-    options.onClose();
+refs.input.addEventListener('change', () => {
+    
 });
 
 // function flatpickr(selector, options);
@@ -31,13 +31,16 @@ const options = {
     defaultDate: new Date(),
     minuteIncrement: 1,
         onClose(selectedDates) {
-            selectedDate = selectedDates[0];
+        //    console.log(selectedDates[0]);
+           selectedDate = selectedDates[0];
+           console.log(selectedDate);
       
       
     },
   };
   console.log(options.defaultDate);
   console.log(selectedDate);
+ 
 //   console.log(selectedDate);
 //   console.log(refs.input.value);
 flatpickr("#datetime-picker", options);
