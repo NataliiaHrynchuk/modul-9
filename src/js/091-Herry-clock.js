@@ -12,7 +12,7 @@ const showClock = () => {
     const currentDate = moment(); //*--з бібліотекою moment
 
     // refs.dateTime.textContent = currentDate.toString(); //*--без бібліотеки moment
-    refs.dateTime.textContent = currentDate.format('YYYY/MM/DD HH:mm:ss');//*--з бібліотекою moment
+    refs.dateTime.textContent = currentDate.format('YYYY MMM DD HH:mm:ss');//*--з бібліотекою moment
 }
 
 const startClock = () => { 
