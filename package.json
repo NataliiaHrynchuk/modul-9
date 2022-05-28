@@ -26,6 +26,7 @@
     "bootstrap": "^5.2.0-beta1",
     "bootstrap.native": "^3.0.15",
     "flatpickr": "^4.6.13",
-    "lodash.throttle": "^4.1.1"
+    "lodash.throttle": "^4.1.1",
+    "notiflix": "^3.2.5"
   }
 }

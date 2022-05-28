@@ -1,6 +1,7 @@
 import flatpickr from "flatpickr";
 // const flatpickr = require("flatpickr");
 import "flatpickr/dist/flatpickr.min.css";
+import Notiflix from 'notiflix';
 
 const refs = {
     input: document.querySelector('#datetime-picker'),
@@ -35,7 +36,8 @@ const options = {
            selectedTime = selectedDates[0];
 
            if(selectedTime < currentTime) {
-             window.alert("Please choose a date in the future");
+            //  window.alert("Please choose a date in the future");
+            Notiflix.Notify.failure('Please choose a date in the future');
              return;
            }
            refs.startBtn.removeAttribute("disabled");
