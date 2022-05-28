@@ -2,6 +2,7 @@ import flatpickr from "flatpickr";
 // const flatpickr = require("flatpickr");
 import "flatpickr/dist/flatpickr.min.css";
 import Notiflix from 'notiflix';
+import '../css/Task-2.css';
 
 const refs = {
     input: document.querySelector('#datetime-picker'),
@@ -10,6 +11,7 @@ const refs = {
     dataHours: document.querySelector('span[data-hours]'),
     dataMinutes: document.querySelector('span[data-minutes]'),
     dataSeconds: document.querySelector('span[data-seconds]'),
+    namesOfTime: document.querySelectorAll('span.label'),
 }
 
 // console.log(refs.startBtn);
@@ -17,6 +19,14 @@ const refs = {
 // console.log(refs.dataHours);
 // console.log(refs.dataMinutes);
 // console.log(refs.dataSeconds);
+console.log(refs.namesOfTime);
+refs.namesOfTime.forEach((name) => {
+    const largeName = name.textContent.toUpperCase();
+    name.textContent = `${largeName}`;
+    
+  // name.textContent.toUpperCase();
+  
+});
 let selectedTime = null;
 let currentTime = new Date();
  refs.startBtn.setAttribute("disabled", true);
