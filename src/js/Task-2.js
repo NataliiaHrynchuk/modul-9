@@ -23,10 +23,9 @@ console.log(refs.namesOfTime);
 refs.namesOfTime.forEach((name) => {
     const largeName = name.textContent.toUpperCase();
     name.textContent = `${largeName}`;
-    
-  // name.textContent.toUpperCase();
-  
-});
+    // name.textContent.toUpperCase();
+  });
+
 let selectedTime = null;
 let currentTime = new Date();
  refs.startBtn.setAttribute("disabled", true);
@@ -51,11 +50,8 @@ const options = {
              return;
            }
            refs.startBtn.removeAttribute("disabled");
-          
           //  console.log(selectedDate.getTime());
-      
-      
-    },
+      },
   };
 
   const timer = {
