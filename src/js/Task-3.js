@@ -28,6 +28,7 @@ function onFormSubmit(event)  {
   event.preventDefault();
   
     const intervalId = setInterval(() => {
+     
       if (position === Number(amount)) {
         
         console.log('потрібно зупинити інтервал');
@@ -38,13 +39,17 @@ function onFormSubmit(event)  {
   
       console.log('запускаю інтервал');
        position += 1;
-      
+       delay = (Number(delay) + Number(step));    
        createPromise(position, delay)
        .then(({ position, delay }) => {
-         console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        //  console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+         Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`);
+         
        })
        .catch(({ position, delay }) => {
-         console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+        //  console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+         Notiflix.Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
+         
        });
             
    }, delay);
@@ -55,6 +60,7 @@ function onFormSubmit(event)  {
   
   return new Promise((resolve, reject) => {
     const shouldResolve = Math.random() > 0.3;
+   
     setTimeout(() => {
       if (shouldResolve) {
         resolve ({position, delay});
@@ -62,7 +68,7 @@ function onFormSubmit(event)  {
         reject ({position, delay});
       }
     }, delay);
-    
+     
   })
   
 }
